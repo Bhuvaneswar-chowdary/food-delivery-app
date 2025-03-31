@@ -1,0 +1,130 @@
+
+.login-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    z-index: 1000;
+    padding: 25px;
+  }
+  
+  /* Form container */
+  .login-popup-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Title and close button */
+  .login-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .login-title h2 {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #ff7f00; /* Orange theme */
+  }
+  
+  .login-title svg {
+    cursor: pointer;
+    color: #ff4500; /* Darker orange for the close button */
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .login-title svg:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Input fields */
+  .login-popup-inputs input {
+    width: 95%;
+    padding: 12px;
+    border: 1.5px solid #ff7f00;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fffaf0; /* Soft orange background for inputs */
+    margin-bottom: 10px; /* Adds space between input fields */
+  }
+  
+  .login-popup-inputs input:focus {
+    outline: none;
+    border-color: #ff4500; /* Highlighted border on focus */
+    background-color: #ffffff;
+  }
+  
+  /* Button styling */
+  button {
+    padding: 12px;
+    background-color: #ff7f00;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #ff4500;
+  }
+  
+  /* Terms and conditions checkbox */
+  .login-popup-condition {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .login-popup-condition p {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .login-popup-condition input {
+    width: 16px;
+    height: 16px;
+  }
+  
+  /* Links inside condition text */
+  .login-popup-condition p span {
+    color: #ff7f00;
+    cursor: pointer;
+  }
+  
+  .login-popup-condition p span:hover {
+    text-decoration: underline;
+  }
+  
+  /* Toggle between signup and login links */
+  .login-popup-container p {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  .login-popup-container p span {
+    color: #ff7f00;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .login-popup-container p span:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 500px) {
+    .login-popup {
+      padding: 20px;
+      width: 90%;
+    }
+  }
+  
