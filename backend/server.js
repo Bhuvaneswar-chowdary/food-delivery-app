@@ -14,12 +14,12 @@ app.use("/api/order",orderRouter)
 
 //middleware
 app.use(express.json());
-app.use(cors());
-// app.use(cors({
-//     origin: "*",
-//     methods: ["GET", "POST"],
-//     allowedHeaders: ["Content-Type","Authorization"],
-// }));
+//app.use(cors());
+app.use(cors({
+    origin: "*",
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type","Authorization"],
+}));
 app.use("/api/user",userRouter)
 
 app.use("/uploads", express.static("uploads"));
