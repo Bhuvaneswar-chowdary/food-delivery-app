@@ -43,6 +43,7 @@ const Fooditem = ({ id, name, price, description, image }) => {
         <div className="food-item-rating">
           <p>{name}</p>
 
+        
           <img src={rating} alt="" />
         </div>
         <p className="food-item-description">{description}</p>
