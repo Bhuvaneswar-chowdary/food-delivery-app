@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import './Navbar.css';
 import logo from '../assets/logo.png';
 import { Link, useNavigate } from 'react-router-dom';
-import { Storecontext } from '../context/Storecontext';
+import { Storecontext } from '../context/context'
 
 
 const Navbar = ({ setshowlogin }) => {

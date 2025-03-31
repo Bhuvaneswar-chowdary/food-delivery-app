@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import rating from '../assets/rating.png'
-import { Storecontext } from '../context/Storecontext'
+import { Storecontext } from '../context/context'
 
 const images = import.meta.glob('../assets/*', { eager: true });
 
@@ -12,7 +12,7 @@ const Fooditem = ({ id, name, price, description, image }) => {
   
 
   const { cartitems, addtocart, removefromcart } = useContext(Storecontext)
-
+  
 
   return (
     <div className="food-item">
@@ -49,6 +49,7 @@ const Fooditem = ({ id, name, price, description, image }) => {
         <div className="food-item-rating">
           <p>{name}</p>
 
+        
           <img src={rating} alt="" />
         </div>
         <p className="food-item-description">{description}</p>
