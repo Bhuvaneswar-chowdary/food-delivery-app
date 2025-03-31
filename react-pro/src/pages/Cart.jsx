@@ -1,7 +1,7 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Cart.css';
-import { Storecontext } from '../context/Storecontext';
+import { Storecontext } from '../context/context'
 
 const Cart = () => {
   const { cartitems, contextvalue, removefromcart,total, setTotal } = useContext(Storecontext);
@@ -26,7 +26,7 @@ const Cart = () => {
       return acc;
     }, 0);
     setTotal(newTotal);
-  }, [cartitems, contextvalue]); // Recalculate total when cart changes
+  }, [cartitems, contextvalue, setTotal]); // Recalculate total when cart changes
 
   return (
     <div className='cart'>

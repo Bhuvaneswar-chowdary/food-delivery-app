@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import './Fooddisplay.css'
-import { Storecontext } from '../context/Storecontext'
+import { Storecontext } from '../context/context'
 import Fooditem from './Fooditem'
 
 
@@ -13,10 +13,7 @@ const Fooddisplay = ({ category }) => {
       <div className="food-display-list">
       {contextvalue.map((item, index) => {
         if(category==="All" || category===item.category){
-         
-         
-          
-        return <Fooditem key={item.id} id={item.id} name={item.name} description={item.description} price={item.price} image={item.image} />
+          return <Fooditem key={index} id={item.id} name={item.name} description={item.description} price={item.price} image={item.image} />
       }
       })}
       </div>

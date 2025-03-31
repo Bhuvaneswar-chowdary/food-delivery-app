@@ -1,6 +1,6 @@
-import { createContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
-export const Storecontext = createContext(null);
+import { Storecontext } from "./context";
 
   
 const Storecontextprovider=({children})=>{

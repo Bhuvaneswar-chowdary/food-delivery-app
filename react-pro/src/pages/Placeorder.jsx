@@ -1,8 +1,7 @@
 import axios from 'axios';
 import React, { useContext, useState } from 'react';
 import './Placeorder.css';
-import { Storecontext } from '../context/storeContext';
-
+import { Storecontext } from '../context/context'
 const Placeorder = () => {
   const { contextvalue, cartitems, total, token, url } = useContext(Storecontext);
   const [data, setData] = useState({

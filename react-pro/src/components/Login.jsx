@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { useState } from 'react'
 import './Login.css'
-import { Storecontext } from '../context/Storecontext.jsx'
+import { Storecontext } from '../context/context'
 import axios from 'axios'
 
 const Login = ({setshowlogin}) => {
