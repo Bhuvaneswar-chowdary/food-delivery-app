@@ -1,0 +1,171 @@
+/* Navbar Container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 92%;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    border-radius: 10px;
+  }
+  
+  /* Logo */
+  .logo {
+    height: 50px;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    color: #e63946;
+  }
+  
+  /* Navbar Menu */
+  .navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #333;
+  }
+  
+  .navbar-menu li {
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  .navbar a{
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .navbar-menu li:hover {
+    color: #e63946;
+  }
+  
+  /* Right Section */
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap:30px;
+  }
+  
+  .navbar-right svg {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    color: #333;
+  }
+  
+  .navbar-right svg:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Basket Icon with Dot */
+  .navbar-search-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .dot {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+  }
+  .navbar .active{
+    padding-bottom: 2px;
+    border-bottom: 2px solid #49557e;
+  }
+  
+  /* Sign-in Button */
+  button {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    background-color: transparent;
+    color: #333;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  button:hover {
+    background-color: #f8f9fa;
+    border-color: #e63946;
+    color: #e63946;
+  }
+
+  .navbar-profile {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .navbar-profile svg {
+    width: 32px;
+    height: 32px;
+    /* Matches the theme */
+  }
+  
+  
+.nav-profile-dropdown {
+  position: absolute;
+  top: 15px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 10px 0;
+  display: none;  /* Initially hidden */
+  z-index: 1;   /* Ensure it stays on top */
+}
+
+.navbar-profile:hover .nav-profile-dropdown
+ {
+  display: block;
+}
+
+/* Dropdown list items */
+.nav-profile-dropdown li {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.nav-profile-dropdown li:hover {
+  background-color: #f7f7f7;
+}
+
+.nav-profile-dropdown li svg {
+  margin-right: 10px;
+  color: #ff7300;
+}
+
+.nav-profile-dropdown p {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Divider between items */
+.nav-profile-dropdown hr {
+  border: none;
+  height: 1px;
+  background-color: #ddd;
+  margin: 5px 0;
+}

@@ -1,0 +1,120 @@
+/* Placeorder.css */
+
+.placeorder {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    background-color: #f7f7f7;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 40px auto;
+  }
+  
+  .placeorder-left,
+  .placeorder-right {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  
+  .placeorder-left {
+    flex: 2;
+  }
+  
+  .title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for input fields */
+  .multi-fields {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fdfdfd;
+  }
+  
+  .input-field:focus {
+    border-color: #ff6f00;
+    outline: none;
+    background-color: #fff;
+  }
+  
+  .input-field::placeholder {
+    color: #888;
+  }
+  
+  .placeorder-right {
+    flex: 1;
+  }
+  
+  .cart-total1 h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #ff6f00;
+  }
+  
+  .cart-total-details1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  hr {
+    border: 0.5px solid #ddd;
+    margin: 10px 0;
+  }
+  
+  /* Button Styles */
+  .placeorder-btn {
+    display: block;
+    width: 100%;
+    max-width: 300px; /* Restrict width to prevent oversized button */
+    padding: 12px 0;
+    background-color: #ff6f00;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    margin: 20px auto 0; /* Center and add margin above */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .placeorder-btn:hover {
+    background-color: #e65c00;
+  }
+  
+  /* Responsive Design for smaller screens */
+  @media (max-width: 768px) {
+    .placeorder {
+      flex-direction: column;
+    }
+  
+    .multi-fields {
+      flex-direction: column; /* Input fields stack in smaller screens */
+    }
+  
+    .placeorder-left,
+    .placeorder-right {
+      width: 100%; /* Take full width on smaller screens */
+    }
+  }
+  

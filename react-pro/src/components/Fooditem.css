@@ -1,0 +1,88 @@
+.food-item {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .food-item:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Food Item Image */
+  .food-item-img.container {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+  }
+  
+  .food-item-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  /* Food Item Info */
+  .food-item-info {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .food-item-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .food-item-rating img {
+    width: 50px;
+    height: auto;
+  }
+  
+  .food-item-description {
+    font-size: 14px;
+    color: #555;
+    margin: 8px 0;
+  }
+  
+  .food-item-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff5722;
+  }
+  
+  .food-item-counter {
+    display: flex;
+    justify-content: center;
+    
+    margin-top: 5px;
+    gap: 7px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: green;
+    color: #fff; /* Updated color */
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+  
+  .food-item-counter svg {
+    width: 23px;
+    height: 23px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .food-item-counter svg:hover {
+    transform: scale(1.2);
+  }
+  
