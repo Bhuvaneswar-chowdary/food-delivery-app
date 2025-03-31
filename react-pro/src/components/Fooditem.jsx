@@ -2,7 +2,14 @@ import React, { useContext } from 'react'
 import rating from '../assets/rating.png'
 import { Storecontext } from '../context/Storecontext'
 
+const images = import.meta.glob('../assets/*', { eager: true });
+
 const Fooditem = ({ id, name, price, description, image }) => {
+  const imageName = `${image.replace(/^\d+/, '')}`;
+  
+  
+  const updatedImage = images[`../assets/${imageName}`]?.default || '';
+  
 
   const { cartitems, addtocart, removefromcart } = useContext(Storecontext)
 
@@ -10,7 +17,8 @@ const Fooditem = ({ id, name, price, description, image }) => {
   return (
     <div className="food-item">
       <div className="food-item-img container">
-        <img src={image} alt="" className="food-item-img" />
+        <img src={updatedImage} alt="" className="food-item-img" />
+        
 
       </div>
       {
