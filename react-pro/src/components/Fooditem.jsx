@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import rating from '../assets/rating.png'
 import { Storecontext } from '../context/context'
+import './Fooditem.css'
 
 const images = import.meta.glob('../assets/*', { eager: true });
 
