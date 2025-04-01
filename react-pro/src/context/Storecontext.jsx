@@ -53,3 +53,53 @@ const Storecontextprovider=({children})=>{
     )
 }
 export default Storecontextprovider;
+// import { useEffect, useState } from "react";
+// import axios from "axios";
+
+// import { Storecontext } from "./context";
+
+// const Storecontextprovider = ({ children }) => {
+//   const [food_list, setfood_list] = useState([]);
+//   const [cartitems, setcartitems] = useState({});
+//   const url = "http://localhost:3000";
+
+//   const addtocart = (itemid) => {
+//     setcartitems((prev) => ({
+//       ...prev,
+//       [itemid]: (prev[itemid] || 0) + 1,
+//     }));
+//   };
+
+//   const removefromcart = (itemid) => {
+//     setcartitems((prev) => {
+//       if (!prev[itemid]) return prev;
+//       const newCart = { ...prev };
+//       newCart[itemid] -= 1;
+//       if (newCart[itemid] === 0) {
+//         delete newCart[itemid];
+//       }
+//       return newCart;
+//     });
+//   };
+
+//   const fetchfoodlist = async () => {
+//     try {
+//       const response = await axios.get(`${url}/api/food/list`);
+//       setfood_list(response.data.data);
+//     } catch (error) {
+//       console.error("Error fetching food list:", error);
+//     }
+//   };
+
+//   useEffect(() => {
+//     fetchfoodlist();
+//   }, []);
+
+//   return (
+//     <Storecontext.Provider value={{ food_list, cartitems, addtocart, removefromcart, url }}>
+//       {children}
+//     </Storecontext.Provider>
+//   );
+// };
+
+// export default Storecontextprovider;

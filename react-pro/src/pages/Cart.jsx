@@ -11,6 +11,8 @@ const Cart = () => {
       if (cartitems[item._id] > 0) {
         return acc + item.price * cartitems[item.id];
       }
+      {console.log(item);
+      }
       return acc;
     }, 0);
     setTotal(newTotal); // Update total in the context
