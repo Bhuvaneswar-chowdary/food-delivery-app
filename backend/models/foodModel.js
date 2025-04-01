@@ -7,6 +7,6 @@ import mongoose from "mongoose";
     category:{type:String,required:true}
  })
 
- const foodmodel = mongoose.models.food || mongoose.model('food',foodSchema)
+ const foodModel = mongoose.models.food || mongoose.model('food',foodSchema)
 
- export default foodmodel;
+ export default foodModel;

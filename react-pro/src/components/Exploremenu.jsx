@@ -12,13 +12,13 @@ import biryani from '../assets/biryani.jpg';
 import start_nonveg from '../assets/start-nonveg.jpg';
 
 const menuItems = [
-  { name: 'Salads', image: salad },
+  { name: 'Salad', image: salad },
   { name: 'cake', image: cake },
   { name: 'Noodles', image: noodles },
   { name: 'Pizza', image: pizza },
   { name: 'Sandwich', image: sandwitch },
-  { name: 'Roll', image: roll },
-  { name: 'Pure-veg', image: pureveg },
+  { name: 'Rolls', image: roll },
+  { name: 'Pure-Veg', image: pureveg },
   { name: 'Dessert', image: dessert },
   { name: 'Biryani', image: biryani },
   { name: 'Starters', image: start_nonveg },
