@@ -2,22 +2,23 @@ import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Cart.css';
 import { Storecontext } from '../context/context'
-
+const images = import.meta.glob('../assets/*', { eager: true });
 const Cart = () => {
-  const { cartitems, contextvalue, removefromcart,total, setTotal } = useContext(Storecontext);
-  const navigate= useNavigate();
+  const { cartitems, contextvalue, removefromcart, total, setTotal } = useContext(Storecontext);
+  const navigate = useNavigate();
   useEffect(() => {
     const newTotal = contextvalue.reduce((acc, item) => {
       if (cartitems[item._id] > 0) {
-        return acc + item.price * cartitems[item.id];
+        return acc + item.price * cartitems[item._id];
       }
       return acc;
+
     }, 0);
     setTotal(newTotal); // Update total in the context
   }, [cartitems, contextvalue, setTotal]);
-  
 
-  
+
+
   useEffect(() => {
     const newTotal = contextvalue.reduce((acc, item) => {
       if (cartitems[item._id] > 0) {
@@ -26,6 +27,9 @@ const Cart = () => {
       return acc;
     }, 0);
     setTotal(newTotal);
+
+    console.log("items = ", cartitems);
+
   }, [cartitems, contextvalue, setTotal]); // Recalculate total when cart changes
 
   return (
@@ -44,9 +48,16 @@ const Cart = () => {
 
         {contextvalue.map((item, index) => {
           if (cartitems[item._id] > 0) {
+            console.log("image = ", item);
+            const imageName = `${item.image.replace(/^\d+/, '')}`;
+
+
+            const updatedImage = images[`../assets/${imageName}`]?.default || '';
+
+
             return (
               <div key={index} className="cart-items2">
-                <img src={item.image} alt="" />
+                <img src={updatedImage} alt="" />
                 <p>{item.name}</p>
                 <p>{item.price}</p>
                 <p>{cartitems[item._id]}</p>
@@ -55,7 +66,7 @@ const Cart = () => {
               </div>
             );
           }
-          return null; 
+          return null;
         })}
       </div>
 
@@ -66,19 +77,19 @@ const Cart = () => {
             <div className="cart-total-details">
               <p>Subtotal</p>
               <p>{total}</p>
-            </div> 
+            </div>
             <hr />
             <div className="cart-total-details">
               <p>Delivery cost:</p>
               <p>{20}</p>
-            </div> 
+            </div>
             <hr />
             <div className="cart-total-details">
               <b>Total</b>
               <b>{total + 20}</b>
             </div>
           </div>
-          <button onClick={()=>navigate('/order')} >PROCEED TO CHECKOUT</button>
+          <button onClick={() => navigate('/order')} >PROCEED TO CHECKOUT</button>
         </div>
 
         <div className="cart-promocode">

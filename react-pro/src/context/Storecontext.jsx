@@ -1,29 +1,43 @@
 import { useEffect, useState } from "react";
+
 import axios from "axios";
-import { Storecontext } from "./context";
+import {Storecontext} from './context'
 
   
 const Storecontextprovider=({children})=>{
-    const [food_list,setfood_list]=useState([])
+   
     const [cartitems,setcartitems]=useState({})
-    // const [contextvalue, setContextValue] = useState([]); // Assuming it holds product info
+    const [contextvalue, setContextValue] = useState([]); // Assuming it holds product info
     const [total, setTotal] = useState(0);
     const url="http://localhost:3000";
     const [token,settoken]=useState("")
+
+    const [food_list,setfood_list]=useState([])
    
     
-    const addtocart=(itemid)=>{
-      if(!cartitems[itemid]){
-        setcartitems((prev)=>({...prev,[itemid]:1}))
+    const addtocart=async (itemId)=>{
+      if(!cartitems[itemId]){
+        setcartitems((prev)=>({...prev,[itemId]:1}))
       } 
       else{
-        setcartitems((prev)=>({...prev,[itemid]:prev[itemid]+1}))
+        setcartitems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
+      }
+      console.log(token);
+      
+      if(token){
+        await axios.post(url+"/api/cart/add",{itemId},{headers:{token}})
+        console.log(itemId);        
       }
     }
-    const removefromcart=(itemid)=>{
-      setcartitems((prev)=>({...prev,[itemid]:prev[itemid]-1}))
+
+    const removefromcart=async(itemId)=>{
+      setcartitems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
+      if(token){
+        await axios.post(url+"/api/cart/remove",{itemId},{headers:{token}})
+
+      }
     }
-    
+
     const fetchfoodlist=async ()=>{
       const response = await axios.get(url+"/api/food/list");
       setfood_list(response.data.data)
@@ -34,6 +48,7 @@ const Storecontextprovider=({children})=>{
       setcartitems(response.data.cartData)
 
     }
+
     useEffect(()=>{
       async function loadData(){
         await fetchfoodlist();
@@ -43,7 +58,7 @@ const Storecontextprovider=({children})=>{
       }
     }
     loadData()
-    })
+    }, [])
 
 
     return(
