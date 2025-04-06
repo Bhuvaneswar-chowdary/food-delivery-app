@@ -9,7 +9,7 @@ const Storecontextprovider=({children})=>{
     const [cartitems,setcartitems]=useState({})
     const [contextvalue, setContextValue] = useState([]); // Assuming it holds product info
     const [total, setTotal] = useState(0);
-    const url="http://localhost:3000";
+    const url=process.env.VITE_BACKEND_URL ;
     const [token,settoken]=useState("")
 
     const [food_list,setfood_list]=useState([])

@@ -1,5 +1,5 @@
 import React from 'react'
-import './appdownload.css'
+import './Appdownload.css'
 import playstore from '../assets/playstore.png'
 import appstore from '../assets/appstore.png'
 
