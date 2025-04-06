@@ -72,13 +72,13 @@
 
 
 .food-item-counter svg {
-  width: 12px;
-  height: 23px;
+  width: 15px;
+  height: 15px;
   cursor: pointer;
   transition: transform 0.2s;
   border: 2px solid #F4B400;
   padding: 6px;
-  border-radius: 100%;
+  border-radius: 50%;
 }
 
 .food-item-counter svg:hover {

@@ -112,6 +112,14 @@ button:hover {
   cursor: pointer;
 }
 
+.pro p{
+  font-size: 18px;
+}
+.pro{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .navbar-profile svg {
   width: 32px;
   height: 32px;
