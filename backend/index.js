@@ -4,15 +4,12 @@ import userRouter from './routes/userroutes.js';
 import {connectDB} from './config/db.js'
 import foodRouter from './routes/foodRoute.js';
 import orderRouter from './routes/orderRoute.js';
-//app config
-const app = express();
-const port = 3000;
 import 'dotenv/config';
 import Cartrouter from './routes/cartRoutes.js';
 
-//api endpoints
-app.use("/api/order",orderRouter)
-
+//app config
+const app = express();
+const port = process.env.PORT || 3000;
 //middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -22,6 +19,10 @@ app.use(cors({
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type","Authorization","token"],
 }));
+
+//api endpoints
+app.use("/api/order",orderRouter)
+
 app.use("/api/user",userRouter)
 
 app.use("/uploads", express.static("uploads"));
