@@ -4,8 +4,10 @@ import userRouter from './routes/userroutes.js';
 import {connectDB} from './config/db.js'
 import foodRouter from './routes/foodRoute.js';
 import orderRouter from './routes/orderRoute.js';
-import 'dotenv/config';
+import dotenv from "dotenv;
 import Cartrouter from './routes/cartRoutes.js';
+
+dotenv.config();
 
 //app config
 const app = express();
