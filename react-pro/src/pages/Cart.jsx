@@ -11,6 +11,8 @@ const Cart = () => {
       if (cartitems[item._id] > 0) {
         return acc + item.price * cartitems[item._id];
       }
+      {console.log(item);
+      }
       return acc;
 
     }, 0);

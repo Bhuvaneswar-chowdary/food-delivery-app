@@ -6,7 +6,7 @@ import Fooditem from './Fooditem'
 
 const Fooddisplay = ({ category }) => {
   const { contextvalue } = useContext(Storecontext)
-  
+
   return (
     <div className="food-display" id="food-display">
       <h2>Top dishes near you </h2>
@@ -18,7 +18,7 @@ const Fooddisplay = ({ category }) => {
       }
       })}
       </div>
-      
+
     </div>
   )
 }

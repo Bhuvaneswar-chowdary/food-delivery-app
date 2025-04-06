@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import './Navbar.css';
 import logo from '../assets/logo.png';
 import { Link, useNavigate } from 'react-router-dom';
@@ -7,7 +7,7 @@ import { Storecontext } from '../context/context'
 
 const Navbar = ({ setshowlogin }) => {
   const [menu, setmenu] = useState("home");
-  const { token, settoken } = useContext(Storecontext)
+  const { token, settoken } = Storecontext
   const navigate= useNavigate
   const logout=()=>{
     localStorage.removeItem("token");
