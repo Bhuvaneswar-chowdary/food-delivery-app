@@ -33,7 +33,7 @@ const Add = ({url}) => {
                 name:"",
                 description:"",
                 price:"",
-                category:"Salad"
+                category:""
             })
             setImage(false)
             toast.success(response.data.message)
